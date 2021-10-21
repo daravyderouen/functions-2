@@ -72,6 +72,13 @@ const newNames = () => {
 
 // CODE HERE
 
+const last =(names, callback) => {
+  return names.pop();
+}
+
+const namesLast = () => {
+  callback();
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -94,6 +101,17 @@ const newNames = () => {
 
 // CODE HERE 
 
+const contains = (array, name, callback) =>{
+  if (array.length=name.length){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+let notUniqueArray= () => {
+  callback ();
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -118,6 +136,9 @@ const newNames = () => {
 */
 
 // CODE HERE
+unique= (arr, callback) => {
+  return callback ([ ...new Set(arr)]);
+
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -128,7 +149,7 @@ const newNames = () => {
 
 // CODE HERE
 
-
+const talkItOUt = () => console.log(`The new names array wih ${uniqArr} is the same`);
 
 ////////// PROBLEM 6 //////////
 
@@ -139,6 +160,11 @@ const newNames = () => {
 
 // CODE HERE 
 
+const each =(arr, cb) =>{
+  for (i = 0; i ,arr.length; i++){
+    cb(arr[i],i)
+  }
+}
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -181,7 +207,14 @@ var users = [
 // Do not edit the code above.
 
 // CODE HERE 
-
+ 
+const getUserById = (users, id, cb) => {
+  for (let i = 0; i < users.length; i++){
+    if(users[i].id === id){
+      cb(users[i])
+    }
+  }
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -208,6 +241,13 @@ var users = [
 */
 
 // CODE HERE
+const addingFactory = (num) =>{
+  return num
+}
+
+const addingMain =() =>{
+  cb();
+}
 
 /*
   Now that you have addingFactory, you can create other
@@ -223,6 +263,8 @@ var users = [
 
 // CODE HERE
 
+const addTen = num => num + 10
+
 /*
   Now the inner function is stored in the addTen variable! 
 
@@ -234,7 +276,8 @@ var users = [
 */
 
 // CODE HERE
-
+const results = addTen(6)
+console.log(results)
 /*
   Let's make another function from the addingFactory. 
 
@@ -244,4 +287,7 @@ var users = [
 
   Once you create that, you can invoke the function
   to add any number to your favorite number!
-*
+
+*/
+
+const addNumber = (cb) =>(console.log(cb(num + 25)))

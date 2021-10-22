@@ -290,4 +290,4 @@ console.log(results)
 
 */
 
-const addNumber = (cb) =>(console.log(cb(num + 25)))
+const addNumber = (cb) =>(console.log(num + 25))

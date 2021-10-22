@@ -18,10 +18,10 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 // CODE HERE
-const evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+const evenNumbers  = mixedNumbers.filter(num => num % 2 === 0)
 
-const evenNumbers = evenNumbers.filter(callback(element, index, array) {
- } [ thisArg])
+
+
 
 ////////// PROBLEM 2 //////////
 
@@ -40,7 +40,7 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 // CODE HERE
-const postTaxPrices // = prices.map(/* Provide Your Callback Here );
+const postTaxPrices  = prices.map((element, index, wholeArray) => { prices * 1.07})
 
 
 
@@ -58,7 +58,8 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+
+const totalPopulation  = populations.reduce((previousValue, currentValue, currentIndex, wholeArray) => {previousValue + currentValue});
 
 
 
@@ -83,7 +84,11 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+const myStrongest  = monstersInYourPocket.filter(monster => monster.CP > 200);
+const reduceMyStrongest = myStrongest.reduce((previousValue, currentValue, curElement, curIndex, curArray) => {currentValue})
+const mapMyStrongest = myStrongest.map((reduceMyStrongest) => {});
+
+
 
 
 
@@ -101,7 +106,14 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 // CODE HERE
-
+const getTotal = (id) => {
+  return console.log(id)
+};
+const multiply = (x,y) => {x * y}
+const newPrices = parseFloat(orders("prices").value);
+const taxRate = parseFloat(orders("prices").value);
+const calculate = (prices, taxRate) => prices * taxRate;
+console.log(getTotal)
 
 
 ////////// PROBLEM 6 //////////
@@ -121,3 +133,7 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+
+let bobtot = purchases.filter(p => p.owner === 'Bob').reduce((sum, p) => sum+p.price, 0);
+
+console.log('bob\'s total:', bobtot);

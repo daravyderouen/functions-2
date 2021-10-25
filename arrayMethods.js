@@ -106,14 +106,26 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 // CODE HERE
-const getTotal = (id) => {
-  return console.log(id)
-};
-const multiply = (x,y) => {x * y}
-const newPrices = parseFloat(orders("prices").value);
-const taxRate = parseFloat(orders("prices").value);
-const calculate = (prices, taxRate) => prices * taxRate;
-console.log(getTotal)
+
+const higherFunction = (arr, cb) =>{
+  let results = arr.map((element, index, array)=> {
+      return cb(element.price, element.tax)
+      //cb()//children can always see the information of the parent but the parent can't see info of the children
+  })
+  return results
+}
+
+
+const calculateFinalCost = (price, taxRate) => {
+
+   let tax = price * taxRate
+   //console.log(price * taxRate)
+   return price + tax
+}
+
+let results = higherFunction(orders, calculateFinalCost)//calling the function and the variable that the function used for it
+
+console.log(results)
 
 
 ////////// PROBLEM 6 //////////
